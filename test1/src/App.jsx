@@ -34,7 +34,7 @@ function App() {
     const progressInterval = setInterval(simulateProgress, 1250); // Update progress every 1.25 seconds
 
     try {
-      const reviewResponse = await axios.post('https://profratingsdeployable.onrender.com/api/reviews', { name });
+      const reviewResponse = await axios.post('https://profratingsbackend.onrender.com/api/reviews', { name });
       console.log('Reviews Response:', reviewResponse.data);
 
       if (reviewResponse.data.reviews.length === 0) {
@@ -42,7 +42,7 @@ function App() {
       } else {
         setReviews(reviewResponse.data.reviews);
         
-        const summaryResponse = await axios.post('https://profratingsdeployable.onrender.com/api/summary', { reviews: reviewResponse.data.reviews });
+        const summaryResponse = await axios.post('https://profratingsbackend.onrender.com/api/summary', { reviews: reviewResponse.data.reviews });
         console.log('Summary Response:', summaryResponse.data);
         setSummary(summaryResponse.data);
       }
