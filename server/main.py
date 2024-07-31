@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(leve
 
 os.environ['GRPC_VERBOSITY'] = 'ERROR'
 os.environ['GRPC_TRACE'] = ''
-api_key = os.getenv(API_KEY)
+api_key = os.getenv("API_KEY")
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
